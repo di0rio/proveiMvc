@@ -1,72 +1,86 @@
-# Sistema de Venda de Produtos
+## Sistema de Venda de Produtos -  [Nome do Projeto]
 
-## Descrição do Projeto
-Este projeto é um sistema web de venda de produtos desenvolvido utilizando o padrão MVC (Model-View-Controller) com C# no Visual Studio 2022. O sistema permite o cadastro de clientes, fornecedores, produtos e a gestão de vendas.
+Este projeto é um sistema web de venda de produtos desenvolvido com C# no Visual Studio 2022, utilizando o padrão MVC (Model-View-Controller). O sistema oferece funcionalidades completas para gerenciar clientes, fornecedores, produtos e vendas.
 
-## Funcionalidades Implementadas
+## Funcionalidades
 
-1. **Cadastro de Clientes**
-   - Campos:
-     - Nome
-     - CPF/CNPJ
-     - Endereço
-     - Telefone
-     - E-mail
-     - Status do Cliente (Ativo/Inativo)
+**Gerenciamento de Cadastros:**
 
-2. **Cadastro de Fornecedores**
-   - Campos:
-     - Nome da Empresa
-     - CNPJ
-     - Endereço
-     - Telefone
-     - E-mail
+* **Clientes:**
+    * Cadastro completo com nome, CPF/CNPJ, endereço, telefone, email e status (ativo/inativo).
+    * Edição e exclusão de registros.
+    * Busca por clientes.
+* **Fornecedores:**
+    * Cadastro com nome da empresa, CNPJ, endereço, telefone e email.
+    * Edição e exclusão de registros.
+    * Busca por fornecedores.
+* **Produtos:**
+    * Cadastro com nome, descrição, preço, quantidade em estoque e associação com fornecedores.
+    * Edição e exclusão de registros.
+    * Busca por produtos.
 
-3. **Gestão de Produtos**
-   - Campos:
-     - Nome do Produto
-     - Descrição
-     - Preço
-     - Quantidade em Estoque
-     - Fornecedor (associado ao cadastro de fornecedores)
+**Gerenciamento de Vendas:**
 
-4. **Cadastro e Registro de Vendas**
-   - Associado a:
-     - Cliente
-     - Produtos selecionados
-   - Geração automática do valor total da venda e data de emissão.
+* **Emissão de Vendas:**
+    * Seleção do cliente e dos produtos.
+    * Cálculo automático do valor total da venda.
+    * Registro da data de emissão.
+    * Visualização e edição de vendas.
 
-## Sessão Bônus (Opcional)
+**Funcionalidades Bônus (Opcionais):**
 
-1. **Autenticação e Controle de Acesso**
-   - Sistema de login para restringir o acesso a usuários não autenticados.
+* **Autenticação e Controle de Acesso:**
+    * Sistema de login para controlar o acesso a funcionalidades específicas.
+* **Relatório de Vendas:**
+    * Gerar relatórios de vendas em um período específico, incluindo o total faturado.
+* **Controle de Estoque:**
+    * Atualização automática do estoque com base nas vendas registradas.
+* **Dashboard Resumido:**
+    * Tela com indicadores chave como número de clientes ativos, produtos em estoque e vendas totais.
 
-2. **Relatório de Vendas**
-   - Relatório mostrando vendas em um período específico, incluindo total faturado.
+## Tecnologias Utilizadas
 
-3. **Controle de Estoque**
-   - Redução automática do estoque com base nas vendas registradas.
+* **C#**
+* **Visual Studio 2022**
+* **ASP.NET MVC**
+* **Banco de Dados (ex: SQL Server, MySQL, PostgreSQL)**
 
-4. **Dashboard Resumido**
-   - Tela com indicadores como número de clientes ativos, produtos em estoque e vendas totais.
+## Instalação e Execução
 
-## Link do GitHub
-O repositório pode ser encontrado em: [SeuLinkAqui](https://github.com/SeuUsuario/SeuRepositório)
+1. **Clone o Repositório:**
+    ```bash
+    git clone https://github.com/SeuUsuario/SeuRepositório.git
+    ```
+2. **Abra o Projeto no Visual Studio:**
+    * Abra a solução do projeto no Visual Studio 2022.
+3. **Restaure os Pacotes NuGet:**
+    * Restaure os pacotes NuGet necessários para o projeto.
+4. **Configure a Conexão com o Banco de Dados:**
+    * Configure a conexão com o banco de dados escolhido no arquivo de configuração do projeto.
+5. **Execute a Aplicação:**
+    * Execute o projeto para iniciar o sistema web.
 
-## Instruções de Execução
+## Screenshots
 
-1. Clonar o repositório:
-   ```bash
-   git clone https://github.com/SeuUsuario/SeuRepositório.git
-Abrir no Visual Studio 2022.
-Restaurar pacotes NuGet.
-Executar a aplicação.
+(Adicione screenshots aqui, se desejar. Exemplo:)
 
+* Tela de Cadastro de Clientes
+* Tela de Eissão de Venda
+* Tela de Relatório de Vendas
+* Dashboard Resumido
 
-### Personalização
+## Documentação
 
-- **Substitua** `SeuLinkAqui`, `SeuUsuario`, e `SeuRepositório` pelos dados corretos do seu repositório.
-- **Adicione imagens** nas seções de screenshots, se você tiver.
-- **Inclua informações** sobre contribuições e licença, se necessário.
+(Adicione links para documentação adicional, se houver.)
 
-Sinta-se à vontade para ajustar o conteúdo conforme necessário!
+## Contribuições
+
+(Adicione informações sobre como contribuir para o projeto, se desejar.)
+
+## Licença
+
+(Especifique a licença do projeto, se houver.)
+
+## Contato
+
+(Adicione informações de contato, se desejar.)
