@@ -1,0 +1,141 @@
+﻿@model proveiMvc.Models.Fornecedor
+@{
+    ViewData["Title"] = "Detalhes do Fornecedor";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+    .card {
+        border-radius: 0.5rem;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .details-label {
+        font-weight: 600;
+        color: #6c757d;
+    }
+
+    .details-value {
+        font-size: 1.1rem;
+    }
+
+    .info-group {
+        padding: 1rem;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+        .info-group:last-child {
+            border-bottom: none;
+        }
+
+        .info-group:hover {
+            background-color: #f8f9fa;
+        }
+
+    .badge-status {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-4 text-primary">
+            <i class="fas fa-building me-3"></i>Detalhes do Fornecedor
+        </h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-0">
+                    <!-- Informações do Fornecedor -->
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-building me-2"></i>Nome da Empresa
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.NomeEmpresa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-id-card me-2"></i>CNPJ
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.CNPJ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-map-marker-alt me-2"></i>Endereço
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.Endereco</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-phone me-2"></i>Telefone
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.Telefone</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-envelope me-2"></i>Email
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.Email</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer bg-light p-4">
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>Voltar
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">
+                            <i class="fas fa-edit me-2"></i>Editar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

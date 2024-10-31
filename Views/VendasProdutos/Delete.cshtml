@@ -1,0 +1,144 @@
+﻿@model proveiMvc.Models.VendaProduto
+
+@{
+    ViewData["Title"] = "Excluir VendaProduto";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+    .card {
+        border-radius: 0.5rem;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .details-label {
+        font-weight: 600;
+        color: #6c757d;
+    }
+
+    .details-value {
+        font-size: 1.1rem;
+    }
+
+    .info-group {
+        padding: 1rem;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+        .info-group:last-child {
+            border-bottom: none;
+        }
+
+    .delete-warning {
+        background-color: #fff5f5;
+        border-left: 4px solid #dc3545;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .delete-icon {
+        font-size: 3rem;
+        color: #dc3545;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-4 text-danger">
+            <i class="fas fa-trash-alt me-3"></i>Excluir VendaProduto
+        </h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <!-- Alerta de Exclusão -->
+                    <div class="delete-warning rounded mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <i class="fas fa-exclamation-triangle delete-icon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-danger mb-2">Confirmação de Exclusão</h4>
+                                <p class="mb-0">Esta ação não pode ser desfeita. Todos os dados do produto na venda serão permanentemente removidos do sistema.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informações do VendaProduto -->
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-box me-2"></i>Quantidade
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.Quantidade</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-file-invoice me-2"></i>ID da Venda
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.VendaId</span> <!-- Corrigido -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="details-label">
+                                    <i class="fas fa-cube me-2"></i>ID do Produto
+                                </span>
+                            </div>
+                            <div class="col-md-9">
+                                <span class="details-value">@Model.ProdutoId</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Exclusão -->
+                    <form asp-action="Delete" class="mt-4">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Voltar
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash-alt me-2"></i>Confirmar Exclusão
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

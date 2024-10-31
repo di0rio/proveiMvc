@@ -1,0 +1,82 @@
+﻿@model IEnumerable<proveiMvc.Models.Venda>
+@{
+    ViewData["Title"] = "Lista de Vendas";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+    .table th {
+        font-weight: 600;
+    }
+
+    .btn-sm {
+        padding: .25rem .5rem;
+    }
+
+    .badge {
+        font-size: 0.875em;
+    }
+
+    .card {
+        border-radius: 0.5rem;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .table-striped tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-4 text-primary">Vendas</h1>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus-circle me-2"></i>Criar Nova Venda
+        </a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.First().DataEmissao)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().ValorTotal)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().Cliente.Nome)</th>
+                            <th>@Html.DisplayNameFor(model => model.First().Produto.Nome)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.DataEmissao)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ValorTotal)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Cliente.Nome)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Produto.Nome)</td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
