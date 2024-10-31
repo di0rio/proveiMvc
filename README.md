@@ -59,28 +59,3 @@ Este projeto é um sistema web de venda de produtos desenvolvido com C# no Visua
     * Configure a conexão com o banco de dados escolhido no arquivo de configuração do projeto.
 5. **Execute a Aplicação:**
     * Execute o projeto para iniciar o sistema web.
-
-## Screenshots
-
-(Adicione screenshots aqui, se desejar. Exemplo:)
-
-* Tela de Cadastro de Clientes
-* Tela de Eissão de Venda
-* Tela de Relatório de Vendas
-* Dashboard Resumido
-
-## Documentação
-
-(Adicione links para documentação adicional, se houver.)
-
-## Contribuições
-
-(Adicione informações sobre como contribuir para o projeto, se desejar.)
-
-## Licença
-
-(Especifique a licença do projeto, se houver.)
-
-## Contato
-
-(Adicione informações de contato, se desejar.)
