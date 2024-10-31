@@ -62,7 +62,7 @@ Abra o arquivo appsettings.json (ou similar) e configure a string de conexão pa
 
 6.**Crie o Banco de Dados (se necessário):**
 
-7**Se o banco de dados não existir, crie-o usando um script SQL (se fornecido no repositório).**
+7.**Se o banco de dados não existir, crie-o usando um script SQL (se fornecido no repositório).**
 
 8.**Execute a Aplicação:**
 
